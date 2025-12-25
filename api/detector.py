@@ -1,7 +1,7 @@
 import random
 import re
 from typing import List
-from .models import DetectionResponse, Segment
+from models import DetectionResponse, Segment
 
 class Detector:
     def __init__(self):

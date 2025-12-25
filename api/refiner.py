@@ -1,7 +1,7 @@
 import asyncio
 from typing import List
-from .models import RefineResponse, Segment, DetectionResponse
-from .detector import Detector
+from models import RefineResponse, Segment, DetectionResponse
+from detector import Detector
 
 class Refiner:
     def __init__(self, detector: Detector):

@@ -1,10 +1,10 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from .models import DetectionRequest, DetectionResponse, RefineRequest, RefineResponse
-from .detector import detector_instance
-from .refiner import Refiner
+from models import DetectionRequest, DetectionResponse, RefineRequest, RefineResponse
+from detector import detector_instance
+from refiner import Refiner
 
-app = FastAPI(title="AI-Refiner-Shield API")
+app = FastAPI(title="AI-Refiner-Shield API", root_path="/api")
 
 # CORS Configuration
 origins = [
@@ -46,7 +46,7 @@ class CheckoutRequest(BaseModel):
     success_url: str = "http://localhost:3000/success"
     cancel_url: str = "http://localhost:3000/cancel"
 
-from .stripe_service import create_checkout_session
+from stripe_service import create_checkout_session
 
 @app.post("/checkout")
 async def create_checkout(request: CheckoutRequest):
