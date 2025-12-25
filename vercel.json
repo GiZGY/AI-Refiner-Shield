@@ -1,21 +1,8 @@
 {
     "rewrites": [
         {
-            "source": "/detect",
-            "destination": "/api/detect"
-        },
-        {
-            "source": "/refine",
-            "destination": "/api/refine"
-        },
-        {
-            "source": "/status",
-            "destination": "/api/status"
+            "source": "/api/(.*)",
+            "destination": "/api/index.py"
         }
-    ],
-    "functions": {
-        "api/**/*.py": {
-            "maxDuration": 60
-        }
-    }
+    ]
 }
